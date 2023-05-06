@@ -1,11 +1,21 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile"
+	"name": "dotfiles",
+	"runArgs": [
+		"--name",
+		"dev_dotfiles"
+	],
+	"build": {
+		"dockerfile": "Dockerfile"
 	},
+	"mounts": [
+		"source=dev_dotfiles_home,target=/home/ubuntu,type=volume"
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"timonwong.shellcheck"
+				"timonwong.shellcheck",
+				"bungcip.better-toml",
+				"skyapps.fish-vscode"
 			]
 		}
 	}

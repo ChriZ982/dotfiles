@@ -4,6 +4,7 @@ RUN yes | unminimize
 RUN apt update && apt install -y \
     sudo \
     man \
+    curl \
     git \
     vim
 
