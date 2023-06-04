@@ -1,13 +1,21 @@
 #!/bin/bash
+set -euxo pipefail
 
-sudo apt update && sudo apt install -y \
-    fish \
-    bat
-curl -sS https://starship.rs/install.sh | sh -s -- --yes
+OS=$(grep -ioP '^ID_LIKE=\K.+' /etc/os-release)
+
+if [[ $OS == "debian" ]]; then
+    sudo apt update && sudo apt install -y \
+        fish \
+        bat
+    curl -sS https://starship.rs/install.sh | sh -s -- --yes
+# elif [[ $OS == "arch" ]]; then
+
+fi
 
 chsh -s "$(which fish)"
 
-mkdir -p ~/.config/fish
-cp ./.config/fish/config.fish ~/.config/fish/config.fish
-cp ./.config/starship.toml ~/.config/starship.toml
-cp ./.vimrc ~/.vimrc
+mkdir -p ~/.config/fish/completions
+ln -f -s $(pwd)/.config/fish/config.fish ~/.config/fish/config.fish
+ln -f -s $(pwd)/.config/fish/completions/docker.fish ~/.config/fish/completions/docker.fish
+ln -f -s $(pwd)/.config/starship.toml ~/.config/starship.toml
+ln -f -s $(pwd)/.vimrc ~/.vimrc
