@@ -3,8 +3,6 @@
 
 format = "$username[@](bold white)$hostname[: ](bold white)$directory$all$line_break$character"
 
-add_newline = false
-
 [cmd_duration]
 min_time = 1_000
 show_milliseconds = true
@@ -16,7 +14,6 @@ ssh_only = false
 
 [username]
 format = "[$user]($style)"
-style_user = "bold 135"
 show_always = true
 
 [git_metrics]
