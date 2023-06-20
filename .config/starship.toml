@@ -7,6 +7,9 @@ format = "$username[@](bold white)$hostname[: ](bold white)$directory$all$line_b
 min_time = 1_000
 show_milliseconds = true
 
+[container]
+disabled = true
+
 [hostname]
 format = '[$hostname]($style)'
 style = "bold 166"
