@@ -29,3 +29,7 @@ starship init fish | source
 if type -q kubectl
     kubectl completion fish | source
 end
+
+if type -q fnm
+    fnm completions --shell fish
+end
