@@ -1,21 +1,14 @@
 {
-	"name": "dotfiles",
-	"runArgs": [
-		"--name",
-		"dev_dotfiles"
-	],
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"mounts": [
-		"source=dev_dotfiles_home,target=/home/ubuntu,type=volume"
-	],
+	"name": "Dotfiles",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"timonwong.shellcheck",
 				"bungcip.better-toml",
-				"skyapps.fish-vscode"
+				"skyapps.fish-vscode",
+				"timonwong.shellcheck"
 			]
 		}
 	}
