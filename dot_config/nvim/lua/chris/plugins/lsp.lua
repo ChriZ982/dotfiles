@@ -1,6 +1,5 @@
 return {
-    {
-        -- configures the built-in LSP client
+    { -- configures the built-in LSP client
         "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason.nvim", -- install LSP servers, formatters, linters, and other tools with ease

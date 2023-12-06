@@ -1,12 +1,12 @@
 return {
     { -- navigate between nvim and tmux panes using CTRL-h/j/k/l
-        "christoomey/vim-tmux-navigator"
+        "christoomey/vim-tmux-navigator",
     },
 
     { -- enable commenting out lines or blocks of code with 'gc' and 'gcc'
         "numToStr/Comment.nvim",
         event = { "BufRead", "BufNewFile" },
-        opts = {}
+        opts = {},
     },
 
     { -- show history of edits made to a file
@@ -19,7 +19,7 @@ return {
         init = function()
             vim.g.better_whitespace_enabled = 0 -- disable highlighting
             vim.g.strip_whitespace_on_save = 1
-            vim.g.strip_whitespace_confirm = 0  -- do not ask for confirmation
+            vim.g.strip_whitespace_confirm = 0 -- do not ask for confirmation
         end,
     },
 

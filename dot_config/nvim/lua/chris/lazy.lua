@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- setup lazy.nvim and all plugins
 require("lazy").setup({ { import = "chris.plugins" } }, {
     install = {
-        colorscheme = { "catppuccin-mocha" } -- load colorscheme before installing plugins
+        colorscheme = { "catppuccin-mocha" }, -- load colorscheme before installing plugins
     },
     change_detection = {
         notify = false, -- do not notify when nvim config files change

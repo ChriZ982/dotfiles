@@ -4,7 +4,7 @@ set -eu
 ID_LIKE=$(cat /etc/*-release | grep ^ID_LIKE | cut -d= -f2)
 if [ "$ID_LIKE" = "debian" ]; then
 	sudo apt update
-	sudo apt install -y fish bat exa zip make ripgrep fd-find tmux
+	sudo apt install -y fish bat exa zip make ripgrep fd-find tmux python3-venv
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 	sudo chsh -s "$(which fish)" "$(whoami)"
