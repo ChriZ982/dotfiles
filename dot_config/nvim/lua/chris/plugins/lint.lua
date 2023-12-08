@@ -5,6 +5,7 @@ return {
             local lint = require("lint")
             lint.linters_by_ft = {
                 cpp = { "cpplint" },
+                markdown = { "markdownlint" },
             }
 
             -- configure linters

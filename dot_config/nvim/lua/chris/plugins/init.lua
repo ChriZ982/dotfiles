@@ -14,6 +14,23 @@ return {
         keys = { { "<leader>u", "<cmd>UndotreeToggle | UndotreeFocus<CR>", desc = "Toggle and focus undo tree (mbbill/undotree)" } },
     },
 
+    { -- surround text with quotes, brackets, etc.
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+        opts = {},
+    },
+
+    { -- show vertical lines at indentation levels
+        "lukas-reineke/indent-blankline.nvim",
+        event = { "BufRead", "BufNewFile" },
+        main = "ibl",
+        opts = {
+            indent = { char = "▏" },
+            scope = { enabled = false },
+        },
+    },
+
     { -- remove trailing whitespace on save
         "ntpeters/vim-better-whitespace",
         init = function()

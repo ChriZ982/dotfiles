@@ -26,6 +26,10 @@ keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
+-- text replacement
+keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<left><Left><Left>", { desc = "Substitute the word under the cursor" })
+keymap.set("v", "<leader>s", '"hy:%s/<C-r>h//gc<left><Left><Left>', { desc = "Substitute the selected text" })
+
 -- clear highlighting
 keymap.set("n", "<leader>ch", "<cmd>noh<CR>", { desc = "Clear highlighting" })
 

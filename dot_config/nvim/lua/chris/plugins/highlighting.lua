@@ -5,10 +5,12 @@ return {
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects", -- allows for improved motions/actions on text objects
             "nvim-treesitter/nvim-treesitter-context", -- shows context of current cursor position when it is out of view
+            "windwp/nvim-ts-autotag", -- automatically close and rename HTML tags
         },
         config = function()
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {
+                    "astro",
                     "bash",
                     "c",
                     "cmake",
@@ -73,6 +75,9 @@ return {
                         swap_next = { ["<leader>a"] = "@parameter.inner" },
                         swap_previous = { ["<leader>A"] = "@parameter.inner" },
                     },
+                },
+                autotag = {
+                    enable = true,
                 },
             })
         end,
