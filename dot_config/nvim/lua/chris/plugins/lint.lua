@@ -17,10 +17,8 @@ return {
 
             -- configure linters
 
-            lint.linters.cpplint.args = {
-                "--linelength=140",
-                "--filter=-legal/copyright,-build/include_order,-readability/todo",
-            }
+            lint.linters.cpplint.args = { "--linelength=140", "--filter=-legal/copyright,-build/include_order,-readability/todo" }
+            lint.linters.markdownlint.args = { "--disable", "MD013", "--" }
 
             -- enable linting on open, save and insert leave
 
