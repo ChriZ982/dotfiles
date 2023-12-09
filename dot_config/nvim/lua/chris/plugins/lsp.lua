@@ -16,14 +16,15 @@ return {
         },
         config = function()
             local servers = {
+                astro = {},
+                tailwindcss = {},
                 clangd = {},
+                rust_analyzer = {},
+                jsonls = {},
                 -- gopls = {},
                 -- pyright = {},
-                rust_analyzer = {},
-                astro = {},
                 -- tsserver = {},
                 -- html = { filetypes = { "html", "twig", "hbs"} },
-
                 lua_ls = {
                     Lua = {
                         workspace = { checkThirdParty = false },
@@ -71,11 +72,8 @@ return {
                 },
             })
 
-            -- print table keys
             local mason_lspconfig = require("mason-lspconfig")
-            mason_lspconfig.setup({
-                ensure_installed = vim.tbl_keys(servers),
-            })
+            mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
 
             require("neodev").setup()
 

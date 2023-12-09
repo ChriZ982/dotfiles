@@ -8,6 +8,13 @@ return {
                 markdown = { "markdownlint" },
             }
 
+            -- ensure that the linters are installed
+
+            local mason_registry = require("mason-registry")
+            for _, linter in ipairs(vim.tbl_flatten(vim.tbl_values(lint.linters_by_ft))) do
+                if not mason_registry.is_installed(linter) then print("Please install the linter '" .. linter .. "'") end
+            end
+
             -- configure linters
 
             lint.linters.cpplint.args = {
